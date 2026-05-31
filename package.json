@@ -1,0 +1,54 @@
+{
+  "name": "mcp-farm",
+  "version": "1.0.0",
+  "description": "Enterprise MCP server farm — Confluence, Jira, BMC Remedy, BMC CMDB, Splunk, Dynatrace",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "shared/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "eslint packages/*/src/**/*.ts shared/*/src/**/*.ts",
+    "clean": "find . -name dist -not -path '*/node_modules/*' | xargs rm -rf",
+    "dev:confluence": "npm run dev --workspace=packages/confluence-mcp",
+    "dev:jira": "npm run dev --workspace=packages/jira-mcp",
+    "dev:remedy": "npm run dev --workspace=packages/bmc-remedy-mcp",
+    "dev:cmdb": "npm run dev --workspace=packages/bmc-cmdb-mcp",
+    "dev:splunk": "npm run dev --workspace=packages/splunk-mcp",
+    "dev:dynatrace": "npm run dev --workspace=packages/dynatrace-mcp",
+    "release": "node scripts/release.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/mcp-farm.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "enterprise",
+    "jira",
+    "confluence",
+    "atlassian",
+    "bmc",
+    "remedy",
+    "cmdb",
+    "splunk",
+    "dynatrace",
+    "ai",
+    "claude"
+  ],
+  "license": "MIT"
+}
