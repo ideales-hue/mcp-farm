@@ -15,6 +15,8 @@ Connect AI assistants (Claude, Cursor, Copilot, etc.) directly to your organizat
 |---------|-------------|-----|
 | [`@mcp-farm/confluence`](./packages/confluence-mcp) | Atlassian Confluence — spaces, pages, search | [![npm](https://img.shields.io/npm/v/@mcp-farm/confluence)](https://npmjs.com/package/@mcp-farm/confluence) |
 | [`@mcp-farm/jira`](./packages/jira-mcp) | Atlassian Jira — issues, sprints, projects | [![npm](https://img.shields.io/npm/v/@mcp-farm/jira)](https://npmjs.com/package/@mcp-farm/jira) |
+| [`@mcp-farm/github`](./packages/github-mcp) | GitHub — repos, issues, PRs, Actions, releases | [![npm](https://img.shields.io/npm/v/@mcp-farm/github)](https://npmjs.com/package/@mcp-farm/github) |
+| [`@mcp-farm/bitbucket`](./packages/bitbucket-mcp) | Bitbucket Cloud & Server — repos, PRs, Pipelines | [![npm](https://img.shields.io/npm/v/@mcp-farm/bitbucket)](https://npmjs.com/package/@mcp-farm/bitbucket) |
 | [`@mcp-farm/bmc-remedy`](./packages/bmc-remedy-mcp) | BMC Remedy — incidents, changes, work orders | [![npm](https://img.shields.io/npm/v/@mcp-farm/bmc-remedy)](https://npmjs.com/package/@mcp-farm/bmc-remedy) |
 | [`@mcp-farm/bmc-cmdb`](./packages/bmc-cmdb-mcp) | BMC CMDB — CIs, relationships, asset discovery | [![npm](https://img.shields.io/npm/v/@mcp-farm/bmc-cmdb)](https://npmjs.com/package/@mcp-farm/bmc-cmdb) |
 | [`@mcp-farm/splunk`](./packages/splunk-mcp) | Splunk — search, alerts, dashboards, indexes | [![npm](https://img.shields.io/npm/v/@mcp-farm/splunk)](https://npmjs.com/package/@mcp-farm/splunk) |
@@ -33,7 +35,7 @@ npm install @mcp-farm/jira
 ### Install all servers
 
 ```bash
-npm install @mcp-farm/confluence @mcp-farm/jira @mcp-farm/bmc-remedy @mcp-farm/bmc-cmdb @mcp-farm/splunk @mcp-farm/dynatrace
+npm install @mcp-farm/confluence @mcp-farm/jira @mcp-farm/github @mcp-farm/bitbucket @mcp-farm/bmc-remedy @mcp-farm/bmc-cmdb @mcp-farm/splunk @mcp-farm/dynatrace
 ```
 
 ### Configure in Claude Desktop
@@ -75,6 +77,21 @@ Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS)
       "env": {
         "DYNATRACE_BASE_URL": "https://your-env.live.dynatrace.com",
         "DYNATRACE_API_TOKEN": "your-dt-api-token"
+      }
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@mcp-farm/github"],
+      "env": {
+        "GITHUB_TOKEN": "ghp_your_personal_access_token"
+      }
+    },
+    "bitbucket": {
+      "command": "npx",
+      "args": ["-y", "@mcp-farm/bitbucket"],
+      "env": {
+        "BITBUCKET_USERNAME": "your-username",
+        "BITBUCKET_APP_PASSWORD": "your-app-password"
       }
     },
     "bmc-remedy": {

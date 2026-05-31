@@ -122,3 +122,29 @@ SPLUNK_TOKEN=eyJra...
 DYNATRACE_BASE_URL=https://abc12345.live.dynatrace.com
 DYNATRACE_API_TOKEN=dt0c01...
 ```
+
+---
+
+## GitHub
+
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `GITHUB_TOKEN` | ✅ | — | Personal Access Token or GitHub App token |
+| `GITHUB_BASE_URL` | ❌ | `https://api.github.com` | Override for GitHub Enterprise Server |
+
+**Create a token:** [github.com/settings/tokens/new](https://github.com/settings/tokens/new) → select `repo`, `workflow`, `read:org` scopes.
+
+---
+
+## Bitbucket
+
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `BITBUCKET_BASE_URL` | ❌ | `https://api.bitbucket.org/2.0` | Override for Bitbucket Server: `https://bb.yourorg.com/rest/api/1.0` |
+| `BITBUCKET_USERNAME` | ✅ (Cloud) | — | Bitbucket account username |
+| `BITBUCKET_APP_PASSWORD` | ✅ (Cloud) | — | App password from Account Settings |
+| `BITBUCKET_TOKEN` | ✅ (Server) | — | Personal Access Token (preferred for Server/DC) |
+
+**Cloud App Password:** [bitbucket.org/account/settings/app-passwords](https://bitbucket.org/account/settings/app-passwords) → New app password → check Repositories + Pull requests + Pipelines.
+
+**Server Token:** Profile → Manage account → Personal access tokens → Create token.

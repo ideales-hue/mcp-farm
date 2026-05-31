@@ -1,0 +1,27 @@
+{
+  "name": "@mcp-farm/github",
+  "version": "1.0.0",
+  "description": "MCP server for GitHub — repos, issues, PRs, branches, files, Actions, releases",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "mcp-github": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.4.0"
+  },
+  "keywords": ["mcp", "github", "git", "enterprise", "devops"],
+  "license": "MIT",
+  "engines": { "node": ">=18.0.0" }
+}
